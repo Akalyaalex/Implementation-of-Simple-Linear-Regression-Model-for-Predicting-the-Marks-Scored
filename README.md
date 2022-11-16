@@ -8,6 +8,7 @@ To write a program to predict the marks scored by a student using the simple lin
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
+
 1. Read the given dataset
 
 2.Assign values for x and y and plot them
