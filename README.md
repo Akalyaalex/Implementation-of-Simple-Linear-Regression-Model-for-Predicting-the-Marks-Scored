@@ -30,6 +30,38 @@ To write a program to predict the marks scored by a student using the simple lin
 Program to implement the simple linear regression model for predicting the marks scored.
 Developed by: Akalya A
 RegisterNumber:  212220220002
+import numpy as np
+import pandas as pd
+dataset=pd.read_csv('/content/Placement_Data.csv')
+dataset.head()
+dataset.tail()
+X=dataset.iloc[:,:-1].values
+Y=dataset.iloc[:,-1].values
+print(X)
+print(Y)
+from sklearn.linear_model import LinearRegression
+reg=LinearRegression()
+reg.fit(X_train,Y_train)
+Y_pred=reg.predict(X_test)
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_absolute_error,mean_squared_error
+
+plt.scatter(X_train,Y_train,color='green')
+plt.plot(X_train,reg.predict(X_train),color='orange')
+plt.title('Training set (H vs S)')
+plt.xlabel('Hours')
+plt.ylabel("scores")
+plt.scatter(X_test,Y_test,color='red')
+plt.plot(X_test,reg.predict(X_test),color='black')
+plt.title('Test set (H vs S)')
+plt.xlabel('Hours')
+plt.ylabel("scores")
+mse=mean_squared_error(Y_test,Y_pred)
+print("MSE = ",mse)
+mae=mean_absolute_error(Y_test,Y_pred)
+print("MAE =  ",mae)
+rmse=np.sqrt(mse)
+print("RMSE = ",rmse)
 
 ##LinearRegression
 
@@ -76,16 +108,16 @@ mae=mean_absolute_error(Y_test,Y_pred)
 print('MAE = ',mae)
 
 rmse=np.sqrt(mse)
-print("RMSE = ",rmse)*/
+print("RMSE = ",rmse)
+*/
 ```
 
-## Output:
-![exp 1](https://user-images.githubusercontent.com/114275126/202213583-cd39c8bf-49d8-4e81-a5c3-cd8d509f2d24.PNG)
-![exp 2](https://user-images.githubusercontent.com/114275126/202213088-a0472773-6edc-46aa-a92c-3b749899ea62.PNG)
-![exp 3](https://user-images.githubusercontent.com/114275126/202213124-4dc692fc-0ffb-4b59-bfa6-0829cb78efe2.PNG)
-![exp 4](https://user-images.githubusercontent.com/114275126/202213250-5899637c-0287-497c-96df-070f1896bc9a.PNG)
-![exp 5](https://user-images.githubusercontent.com/114275126/202213290-e98925e6-f519-47f5-8945-ed350b9a6335.PNG)
-![exp 6](https://user-images.githubusercontent.com/114275126/202213314-ccfcd7c4-43d7-4d11-aaea-cb4924e105aa.PNG)
 
+## Output:
+![1](https://user-images.githubusercontent.com/114275126/204101071-184e5b14-dc5f-47c0-9656-99d67454b74f.PNG)
+![2](https://user-images.githubusercontent.com/114275126/204101119-3701aab7-8e92-4d4d-9d47-b3a9aa4263dd.PNG)
+![33](https://user-images.githubusercontent.com/114275126/204101163-06d4661f-0f18-4604-a1a2-834e5e8d1095.PNG)
+![4](https://user-images.githubusercontent.com/114275126/204101195-ea5b529f-c6fa-4e4a-bfa4-e417b446db10.PNG)
 ## Result:
+
 Thus the program to implement the simple linear regression model for predicting the marks scored is written and verified using python programming.
